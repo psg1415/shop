@@ -26,7 +26,12 @@
     background-color: white;
     border-radius:20px;
 }
-
+.find1{
+	height: 250px;
+}
+.find2{
+	height: 300px;
+}
 .find1 input, .find2 input{
 	width: 90%;
 	height: 30px;
