@@ -7,7 +7,7 @@
 	transform: translate(-50%, -50%);
 	text-align: center;
     width: 50%;
-    height: 500px;
+    height: 450px;
     background-color: white;
     border-radius:20px;
 }
@@ -117,13 +117,10 @@
 
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-	h2{
-		margin: 10px;
-	}
+	
 	.join {
+		top: 55%;
 		width: 80%;
-		top: 54.5%;
-		height: 480px;
 	}
 	.join input {
 		padding: 0;
@@ -147,13 +144,10 @@
 }
 
 @media only screen and (max-device-width: 768px){
-	h2{
-		margin: 10px;
-	}
+	
 	.join {
+		top: 55%;
 		width: 80%;
-		top: 54.5%;
-		height: 480px;
 	}
 	.join input {
 		padding: 0;
