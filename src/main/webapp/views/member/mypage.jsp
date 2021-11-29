@@ -3,11 +3,11 @@
 
 <section class="content">
 	<div class="flexbox">
-	    <div class="item"><a href='${rootURL}/member/mypage/account'>계정 관리</a></div>
-	    <div class="item">장바구니</div>
-	    <div class="item">주문 내역</div>
-	    <div class="item">주문 배송조회</div>
-	    <div class="item">결제 관리</div>
-		<div class="item"><a href='${rootURL}/member/mypage/address'>주문 배송지 관리</a></div>
+		<input class="item" type="button" value="계정 관리" style="padding: 0;" onClick="location.href='${rootURL}/member/mypage/account'">
+	    <input class="item" type="button" value="장바구니" style="padding: 0;" onClick="">
+	    <input class="item" type="button" value="주문 내역" style="padding: 0;" onClick="">
+	    <input class="item" type="button" value="주문 배송조회" style="padding: 0;" onClick="">
+	    <input class="item" type="button" value="결제관리" style="padding: 0;" onClick="">
+	    <input class="item" type="button" value="배송지관리" style="padding: 0;" onClick="location.href='${rootURL}/member/mypage/address'">
 	</div>
 </section>
