@@ -3,9 +3,9 @@
 
 <section class="content1">
 	<div class="flexbox1">
-	    <div class="item1"><a href='${rootURL}/category/chicken'>닭가슴살 </a></div>
-	    <div class="item1"><a href='${rootURL}/category/sausage'>소세지/핫바류 </a></div>
-	    <div class="item1"><a href='${rootURL}/category/salad'>샐러드 </a></div>
-	    <div class="item1"><a href='${rootURL}/category/shake'>쉐이크 </a></div>
+	    <input class="item" type="button" value="닭가슴살" style="padding: 0;" onClick="location.href='${rootURL}/category/chicken'">
+	    <input class="item" type="button" value="소세지/핫바류" style="padding: 0;" onClick="location.href='${rootURL}/category/sausage'">
+	    <input class="item" type="button" value="샐러드" style="padding: 0;" onClick="location.href='${rootURL}/category/salad'">
+	    <input class="item" type="button" value="쉐이크" style="padding: 0;" onClick="location.href='${rootURL}/category/shake'">
 	</div>
 </section>
