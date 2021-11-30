@@ -72,6 +72,9 @@
 		padding: 0;
 		text-align: center;
 	}
+	.find1{
+		top: 50%;
+	}
 	.find1, .find2{
 		width: 80%;
 	}
@@ -106,6 +109,9 @@
 	.login input{
 		padding: 0;
 		text-align: center;
+	}
+	.find1{
+		top: 50%;
 	}
 	.find1, .find2{
 		width: 80%;

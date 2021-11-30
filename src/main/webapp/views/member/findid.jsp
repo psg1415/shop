@@ -5,7 +5,7 @@
 	<c:when test="${memId == null}">
 		<div class="find1">
 			<h2 style="text-align: center;">아이디찾기</h2>
-			<form method="post" action="../member/findid" autocomplete="off">
+			<form method="post" action="../member/findid" autocomplete="off" target="ifrmHidden">
 				<input type="text" name="memNm" placeholder="회원명"><br><br>
 				<input type="text" name="cellPhone" placeholder="핸드폰번호"><br><br>
 				<input class="c" type="submit" value="아이디 찾기" style="padding: 0;"><br><br>

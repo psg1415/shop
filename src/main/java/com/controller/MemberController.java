@@ -142,7 +142,7 @@ public class MemberController extends HttpServlet {
 			
 			request.setAttribute("socialType", socialType);
 			request.setAttribute("action", "../member/info");
-			RequestDispatcher rd = request.getRequestDispatcher("/views/member/form.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/member/join.jsp");
 			rd.include(request, response);
 		} else { // 수정 처리 
 			MemberDao dao = MemberDao.getInstance();
