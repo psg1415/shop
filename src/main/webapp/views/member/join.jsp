@@ -45,6 +45,11 @@ if (request.getAttribute("socialMember") != null) {
 		<div class="join">
 			<h2 class="hjoin" style="text-align: center;">회원가입</h2>
 			<c:choose>
+				<c:when test="${mode == 'address'}">
+					<input type="text" name="address" value="${member.address}">
+				</c:when>
+			<c:otherwise>
+			<c:choose>
 				<c:when test="${member == null}">
 					<input type="text" name="memId" value="${socialMember.memId}" placeholder="아이디"><br><br>
 				</c:when>
@@ -66,14 +71,8 @@ if (request.getAttribute("socialMember") != null) {
 				</c:otherwise>
 			</c:choose>
 			<input type="text" name="cellPhone" value="${member.cellPhone}" placeholder="핸드폰번호"><br><br>
-			<c:choose>
-				<c:when test="${mode == 'address'}">
-					<input type="text" name="address" value="${member.address}" placeholder="주소"><br><br>
-				</c:when>
-				<c:otherwise>
-					<input type="text" name="address" value="${member.address}" placeholder="주소"><br><br>
-				</c:otherwise>
-			</c:choose>
+			<input type="text" name="address" value="${member.address}" placeholder="주소"><br><br>
+				
 				
 			
 			
@@ -88,7 +87,8 @@ if (request.getAttribute("socialMember") != null) {
 					<input class="cancle1" type="reset" value="다시입력" style="padding: 0;">
 					<input class="cancle1" class="c" type="button" value="취소" style="padding: 0;" onClick="location.href='${rootURL}/member/login'">
 				</div>
-			
+			</c:otherwise>
+			</c:choose>
 		</div>
 	</form>
 </div>
