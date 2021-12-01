@@ -1,26 +1,58 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-
-<link rel="stylesheet"  href="${pageContext.request.contextPath}/resources/css/sy.css">
-<link rel="stylesheet"  href="${pageContext.request.contextPath}/resources/css/style.css">
-
-<div class="add">
-	<h1 style="text-align: center;">상품 등록</h1>
-
- <form name="newGoods"  >
- 
-	상품 목록 <input type="text" id="goodsId" name="goodsId" > <br>
-	
-	상품 이름 <input type="text" id="goodsNm" name="name" > <br>
-	
-	가격 <input type="text" id="unitPrice" name="unitPrice" ><br>
-
-	상세 내용  <textarea name="description" cols="50" rows="2" ></textarea><br>
-	 
-	상품 이미지 <input type="file" name="goodsImage" ><br>
-	
-	<input type="button"  value="등록" onclick="location='../main/index.jsp'">
-
-			
-	</form>
-	
-</div>
+<%@ page import="com.models.goods.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String action = (String)request.getAttribute("action");
+%>
+<c:set var="action" value="<%=action%>" />
+<main>
+	<div class='goods_box'>
+		<div class='tit'>
+			상품등록
+		</div>
+		<form name='frmGoods' id='frmGoods' method="post" action="${action}" target="ifrmHidden" autocomplete="off" enctype="multipart/form-data">
+			<dl>
+				<dt>상품 이미지</dt>
+				<dd>
+					<input type="file" name="goodsImage">	
+				</dd>
+			</dl>
+			<dl>
+				<dt>상품명</dt>
+				<dd>
+					<input type="text" name="goodsNm">
+				</dd>
+			</dl>
+			<dl>
+				<dt>상품가격</dt>
+				<dd>
+					<input type="number" name="goodsPrice">
+				</dd>
+			</dl>
+			<dl>
+				<dt>카테고리</dt>
+	            <dd>
+                <input type="radio" name="category" id='category_chicken' value="닭가슴살" checked>
+                <label for='category_chicken'>닭가슴살</label>
+                
+                <input type="radio" name="category" id='category_sausage' value="소세지/핫바">
+                <label for='category_sausage'>소세지 / 핫바</label>
+                
+                <input type="radio" name="category" id='category_salad' value="샐러드">
+                <label for='category_salad'>샐러드</label>
+                
+                <input type="radio" name="category" id='category_shake' value="쉐이크">
+                <label for='category_shake'>쉐이크</label>
+            	</dd>
+			</dl>
+			<dl>
+				<dt>상세설명</dt> 
+				<dd>
+					<input type="text" name="goodsExplain" style="height: 300px; width: 90%;">
+				</dd>
+			</dl>
+			<input type="reset" value="다시입력">
+			<input type="submit" value="입력">
+		</form>
+	</div>
+</main>

@@ -67,12 +67,12 @@
 
 .address {
 	position:absolute;
-	top: 60%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
     width: 50%;
-    height: 220px;
+    height: 265px;
     background-color: white;
     border-radius:20px;
 }
@@ -152,19 +152,23 @@
 		width: 80%;
 		height: 470px;
 	}
-	.join input {
+	.join input{
 		padding: 0;
 		text-align: center;
 	}
  	.add {
-		width:60%;
-	}
-	.address {
-		width: 50%;
-	}
-	.account {
-		top:10%;
 		width: 80%;
+		text-align: center;
+ 	}
+	.address {
+		width: 80%;
+		top: 50%;
+		text-align: center;
+	}
+	
+	.account {
+		width: 80%;
+		top: 55%;
 		text-align: center;
 	}
 
@@ -179,20 +183,22 @@
 		width: 80%;
 		height: 470px;
 	}
-	.join input {
+	.join input, .address input, .account input {
 		padding: 0;
 		text-align: center;
 	}
     .add {
-		
+		width: 80%;
 		text-align: center;
  	}
 	.address {
+		width: 80%;
 		top: 50%;
 		text-align: center;
 	}
 	
 	.account {
+		width: 80%;
 		top: 55%;
 		text-align: center;
 	}

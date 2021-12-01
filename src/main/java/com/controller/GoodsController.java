@@ -81,7 +81,7 @@ public class GoodsController extends HttpServlet {
 	 */
 	private void addController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (httpMethod.equals("GET")) { // 양식 출력
-			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/form.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/add.jsp");
 			rd.include(request, response);
 		} else { // 데이터처리(post)
 			try {
@@ -108,7 +108,7 @@ public class GoodsController extends HttpServlet {
 	 */
 	private void editController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (httpMethod.equals("GET")) { // 양식 출력
-			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/form.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/add.jsp");
 			rd.include(request, response);
 		} else { // 데이터처리(post)
 			try {
@@ -135,7 +135,7 @@ public class GoodsController extends HttpServlet {
 	 */
 	private void deleteController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (httpMethod.equals("GET")) { // 양식 출력
-			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/form.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/add.jsp");
 			rd.include(request, response);
 		} else { // 데이터처리(post)
 			try {

@@ -58,7 +58,7 @@ footer {
     float: left;
     width:20%;
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 1.5% 0;
     text-align: center;
     font-size: 25px;
 }
@@ -99,7 +99,7 @@ input#search2 {
 .header_login{
     float: right;
     width:15%;
-    padding: 28px 0;
+    padding: 5% 0;
     box-sizing: border-box;
     text-align: right;
 }
