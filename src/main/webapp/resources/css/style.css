@@ -32,6 +32,7 @@ header {
 }
 main {
   width: 100%;
+  overflow:auto;
   height: 85%;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.25);
@@ -58,7 +59,7 @@ footer {
     float: left;
     width:20%;
     box-sizing: border-box;
-    padding: 1.5% 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 25px;
 }
@@ -99,7 +100,7 @@ input#search2 {
 .header_login{
     float: right;
     width:15%;
-    padding: 5% 0;
+    padding: 28px 0;
     box-sizing: border-box;
     text-align: right;
 }
@@ -157,6 +158,10 @@ a{
   #search2{
   text-align: center;
   }
+   .joinFrm{
+	width:100%;
+	margin : 0 auto;	
+  }
 }
 @media only screen and (max-device-width: 768px) {
   .layout_width {
@@ -183,6 +188,7 @@ a{
   nav {
     display: none;
   }
+
 }
 @media only screen and (min-device-width: 1024px) {
   .search2 {

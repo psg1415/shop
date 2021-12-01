@@ -1,135 +1,189 @@
 /** join.jsp */
-
+.joinFrm{
+	display:flex;
+	width:100%;
+	justify-content: center;
+		
+}
 .join {
-	position:absolute;
-	top: 60%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-    width: 50%;
-    height: 500px;
-    background-color: white;
-    border-radius:20px;
+	width:60%;
 }
-.join input {
-	width: 90%;
-	height: 30px;
-	padding-left: 20px;
-	border-radius:20px;
-	border-color: rgba(0, 0, 0, 0.25);
+.join .join1 {
+	width:100%;
+	text-align:left;
+}
+.join .join_text{
+	display:inline-block;
+	width:20%;
+	text-align:center;
 }
 
-.join input[type=button], .join input[type=reset]{
-	border-radius: 20px;
+.join1 input {
+	width: 70%;
+	padding: 2%;
+	border-color: rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+.join2{
+	text-align:center;
+}
+.join2 input {
+	border-color: rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+.join input[type=button] {
+	border-radius: 10px;
+	width: 100%;
+	padding:2%;
 	cursor: pointer;
 }
 .button1{  /**join, address 버튼*/
 	margin-top : 5%;
 }
 
-
-.cancle{
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1em;
-	margin: 0 5%;
-}
-.cancle1{
-	min-height: 10px;
-	flex-basis: 10px;
-	flex-grow: 1;
-	border: 1px solid;
-	border-color: rgba(0, 0, 0, 0.25);
-	border-radius:20px;
-	text-align: center;
-	cursor: pointer;
-}
 /** add.jsp */
 
 .add {
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform: translate(-50%, -50%);
+	display:flex;
+	width:100%;
+	justify-content:center;
+	flex-wrap :wrap;
+	margin-top: 2rem;
+}
+.add h1{
+	width:100%;
+}
+.add .radio{
+	border-bottom: 1px solid #c5c5c5;	
+	flex-wrap: wrap;
+}
+.add .radio div{
+	display:block;
+	width:25%;
+	justify-content:center;
+	text-align:center;
+}
+.add .radio input{
+	display:none;
+	height:20px;
+	width:20%;
+	vertical-align:middle;
+}
+.add .radio label{
+	font-family:'sans-serif';
+	font-size:1.2rem;
+	padding:0.5rem 0.8rem;
+}
+.add .radio input:checked + label{
+	background:orange;
+	color:white;
+	border-radius:5px;
+}
+.newGoods{
+	background:white;
+	width:60%;
+	border: 2px solid #c5c5c5;
+}
+.newGoods div{
+	display:flex;
+	width:100%;
+	margin-bottom:1.5rem;
+	align-items:center;
+}
+.newGoods span{
+	font-family:'sans-serif';
+	font-size:1.1rem;
+	display:inline-block;
+	width:25%;
+	text-align:center;
 }
 .add input {
+	font-family:'sans-serif';
+	padding-left:0.5rem;
 	border-radius: 10px;
 	border-color: rgba(0, 0, 0, 0.25);
 	width:70%;
+	height:35px;
 }
 .add input[type=button] {
+	margin-top:2rem;
+	font-family: 'sans-serif';
 	border-radius: 10px;
-	width: 100%;
-	padding:2%;
+	width: 50%;
+	font-size:1.5rem;
+	font-weight:bold;
+	height:55px;
 	cursor: pointer;
+}
+.add textarea{
+	width:70%;
+	height:100px;
+	font-family:'sans-serif';
+}
+.newGoods_btn{
+	justify-content: center
 }
 /** address.jsp */
 
 .address {
 	position:absolute;
-	top: 55%;
-	left: 50%;
+	top:20%;
+	left:50%;
 	transform: translate(-50%, -50%);
-	text-align: center;
-    width: 50%;
-    height: 265px;
-    background-color: white;
-    border-radius:20px;
 }
 .address input {
-	width: 90%;
-	height: 30px;
-	padding-left: 20px;
-	border-radius:20px;
 	border-color: rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	width: 80%;
 }
-.address input[type=button], .address input[type=reset] {
-	border-radius: 20px;
+.address input[type=button] {
+	border-radius: 10px;
+	width: 100%;
+	padding:2%;
 	cursor: pointer;
 }
 /** account.jsp */
 
 .account {
 	position:absolute;
-	top: 60%;
-	left: 50%;
+	left:50%;
 	transform: translate(-50%, -50%);
-	text-align: center;
-    width: 50%;
-    height: 440px;
-    background-color: white;
-    border-radius:20px;
+	margin-top: 15%;
+	line-height: 3;
 }
 .account input {
-	width: 90%;
-	height: 30px;
-	padding-left: 20px;
-	border-radius:20px;
+	border-radius: 10px;
 	border-color: rgba(0, 0, 0, 0.25);
 }
-.account input[type=button], .join input[type=reset]{
-	border-radius: 20px;
+.account input[type=button]{
+	border-radius: 10px;
+	width: 100%;
+	padding:2%;
 	cursor: pointer;
 }
 
 /**index.jsp*/
 
-.main {
-	position: absolute;
-	transform: translate(-50%, -10%);
-	top:30%;
-	left:50%;
-	display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 0 10%;
+.main{	
+	display:flex;
+	justify-content : flex-start;
+	flex-wrap: wrap;
+	padding: 2rem 10%;
+	
 }
+.main .goods{
+	width:25%;
+	text-align:left;
+	padding-right:1.5rem;
+}
+
  
 .goodsPrice {
 	color: red;
 }
 .goodsImage {
-	width: 90%;
+	width: 100%;
 	height: 60%;
 }
 .product1 {
@@ -141,66 +195,84 @@
 .product3 {
 	width: 60%;
 }
-
+.goodsNm, .goodsPrice{
+	font-size:1.1rem;
+}
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-	.hjoin{
-		margin: 10px;
-	}
-	.join {
-		top: 55%;
-		width: 80%;
-		height: 470px;
-	}
-	.join input{
-		padding: 0;
-		text-align: center;
-	}
- 	.add {
-		width: 80%;
-		text-align: center;
- 	}
-	.address {
-		width: 80%;
-		top: 50%;
-		text-align: center;
-	}
-	
-	.account {
-		width: 80%;
-		top: 55%;
-		text-align: center;
-	}
+ .join {
+ 	width: 60%;
+ 	text-align: center;
+}
 
+ .address {
+	width: 50%;
+	}
+	.account {
+	top:10%;
+	width: 80%;
+	text-align: center;
+	}
+	.account input[type=button]{
+	  width: 50%;
+}
+
+	.main .goods{
+	width:33.3%
+	}
+	.goodsNm, .goodsPrice{
+	font-size:1.1rem;
+	}
+.newGoods span{
+	display:none;
+}
+.newGoods div{
+	justify-content:center;
+}
 }
 
 @media only screen and (max-device-width: 768px){
-	.hjoin{
-		margin: 10px;
-	}
+
 	.join {
-		top: 55%;
-		width: 80%;
-		height: 470px;
-	}
-	.join input, .address input, .account input {
-		padding: 0;
-		text-align: center;
-	}
-    .add {
-		width: 80%;
-		text-align: center;
- 	}
+	width: 80%;
+ 	text-align: center;
+}
+   
 	.address {
-		width: 80%;
-		top: 50%;
-		text-align: center;
+	width: 60%;
 	}
 	
 	.account {
-		width: 80%;
-		top: 55%;
-		text-align: center;
+	top:20%;
+	width: 100%;
+	text-align: center;
 	}
+	.account input[type=button]{
+	  width: 40%;
+}
+.main {
+	width: 102%;
+	font-size: 10px;
 	
+}
+.main .goods{
+	width:50%;
+	margin-bottom:3rem;
+}
+.goodsNm, .goodsPrice{
+	font-size:1.2rem;
+}
+.newGoods span{
+	display:none;
+}
+.newGoods input, .newGoods textarea, .newGoods input[type="button"]{
+	width:90%;
+}
+.newGoods div{
+	justify-content:center;
+}
+
+.add .radio div{
+	width:50%;
+}
 }
