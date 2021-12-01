@@ -34,11 +34,17 @@ public class GoodsController extends HttpServlet {
 		String URI = request.getRequestURI();
 		String mode = URI.substring(URI.lastIndexOf("/") + 1);
 		switch(mode) {
+			case "goods" : // 상품 관리 페이지
+				goodsController(request, response);
+				break;
 			case "add" : // 상품등록
 				addController(request, response);
 				break;
-			case "shoppingbag" : // 장바구니
-				shoppingbagController(request, response);
+			case "edit" : // 상품 수정
+				editController(request, response);
+				break;
+			case "delete" : // 상품 삭제
+				deleteController(request, response);
 				break;
 			default : // 없는 페이지 
 				RequestDispatcher rd = request.getRequestDispatcher("/views/error/404.jsp");
@@ -51,6 +57,21 @@ public class GoodsController extends HttpServlet {
 	}
 	
 	/**
+	 * 상품 관리 페이지 /goods
+	 * 
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	private void goodsController (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (httpMethod.equals("GET")) {
+		RequestDispatcher rd = request.getRequestDispatcher("/views/goods/index.jsp");
+		rd.include(request, response);
+		}
+	}
+	
+	/**
 	 * 상품 등록 /goods/add
 	 * 
 	 * @param request
@@ -60,7 +81,7 @@ public class GoodsController extends HttpServlet {
 	 */
 	private void addController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (httpMethod.equals("GET")) { // 양식 출력
-			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/add.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/form.jsp");
 			rd.include(request, response);
 		} else { // 데이터처리(post)
 			try {
@@ -78,23 +99,50 @@ public class GoodsController extends HttpServlet {
 	}
 	
 	/**
-	 * 장바구니 /goods/shoppingbag
+	 * 상품 수정 /goods/edit
 	 * 
 	 * @param request
 	 * @param response
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	private void shoppingbagController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void editController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (httpMethod.equals("GET")) { // 양식 출력
-			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/add.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/form.jsp");
+			rd.include(request, response);
+		} else { // 데이터처리(post)
+			try {
+				GoodsDao dao = GoodsDao.getInstance();
+				boolean result = dao.editGoods(request);
+				if (!result) {
+					throw new Exception("상품수정을 실패하였습니다.");
+				}
+				out.print("<script>parent.location.reload();</script>");
+			} catch (Exception e) {
+				Logger.log(e);
+				out.printf("<script>alert('%s');</script>", e.getMessage());
+			}
+		}		
+	}
+	
+	/**
+	 * 상품 삭제 /goods/delete
+	 * 
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	private void deleteController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (httpMethod.equals("GET")) { // 양식 출력
+			RequestDispatcher rd = request.getRequestDispatcher("/views/goods/form.jsp");
 			rd.include(request, response);
 		} else { // 데이터처리(post)
 			try {
 				GoodsDao dao = GoodsDao.getInstance();
 				boolean result = dao.addGoods(request);
 				if (!result) {
-					throw new Exception("상품등록을 실패하였습니다.");
+					throw new Exception("상품삭제를 실패하였습니다.");
 				}
 				out.print("<script>parent.location.reload();</script>");
 			} catch (Exception e) {

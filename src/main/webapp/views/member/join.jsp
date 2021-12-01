@@ -54,7 +54,7 @@ if (request.getAttribute("socialMember") != null) {
 					<input type="text" name="memId" value="${socialMember.memId}" placeholder="아이디"><br><br>
 				</c:when>
 				<c:otherwise>
-					<c:out value="아이디 : '${member.memId}'"/><br><br>
+					<c:out value="아이디 : ${member.memId}"/><br><br>
 				</c:otherwise>
 			</c:choose>
 			<c:if test="${socialType == 'none'}">
@@ -81,6 +81,9 @@ if (request.getAttribute("socialMember") != null) {
 				<c:when test="${member == null}">
 					<input class="c" type="submit" value="회원가입" style="padding: 0;"><br><br>
 				</c:when>
+				<c:otherwise>
+					<input type="submit" value="정보수정" style="padding: 0;"><br><br>
+				</c:otherwise>
 			</c:choose>
 			
 				<div class="cancle">
@@ -92,8 +95,7 @@ if (request.getAttribute("socialMember") != null) {
 		</div>
 	</form>
 </div>
-		
-		
+
 		
 		
 		

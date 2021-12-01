@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import com.core.Logger;
+import com.models.goods.GoodsDao;
 import com.models.member.Member;
 import com.models.member.MemberDao;
 
@@ -36,8 +37,11 @@ public class MypageController extends HttpServlet{
 			case "account" : // 계정관리
 				accountController(request, response);
 				break;
-			case "address" : // 장바구니
+			case "address" : // 배송지 관리
 				addressController(request, response);
+				break;
+			case "shoppingbag" : // 장바구니
+				shoppingbagController(request, response);
 				break;
 			default : // 없는 페이지 
 				RequestDispatcher rd = request.getRequestDispatcher("/views/error/404.jsp");
@@ -59,7 +63,7 @@ public class MypageController extends HttpServlet{
 	 */
 	private void mypageController (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (httpMethod.equals("GET")) {
-		RequestDispatcher rd = request.getRequestDispatcher("/views/member/mypage.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/views/mypage/mypage.jsp");
 		rd.include(request, response);
 		}
 	}
@@ -110,6 +114,7 @@ public class MypageController extends HttpServlet{
 	
 	/**
 	 * 배송지 관리 /member/mypage/address
+	 * 
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -149,5 +154,24 @@ public class MypageController extends HttpServlet{
 				out.printf("<script>alert('%s');</script>", e.getMessage());
 			}
 		}
+	}
+	
+	private void shoppingbagController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (httpMethod.equals("GET")) { // 양식 출력
+			RequestDispatcher rd = request.getRequestDispatcher("/views/mypage/shoppingbag.jsp");
+			rd.include(request, response);
+		} else { // 데이터처리(post)
+			try {
+				GoodsDao dao = GoodsDao.getInstance();
+				boolean result = dao.addGoods(request);
+				if (!result) {
+					throw new Exception("상품등록을 실패하였습니다.");
+				}
+				out.print("<script>parent.location.reload();</script>");
+			} catch (Exception e) {
+				Logger.log(e);
+				out.printf("<script>alert('%s');</script>", e.getMessage());
+			}
+		}		
 	}
 }

@@ -31,7 +31,7 @@
       <div class="category_top" id="category_top">
         <span class="category"><a href="${rootURL}/category">카테고리</a></span>
         <span class="mypage"><a href="${rootURL}/member/mypage">마이페이지</a></span>
-        <span class="shoppingbag"><a href="${rootURL}/member/mypage/shoppingbag">장바구니</a></span>
+        <span class="shoppingbag"><a href="${rootURL}/mypage/shoppingbag">장바구니</a></span>
       </div>
     </nav>
     <main>

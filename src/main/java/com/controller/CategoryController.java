@@ -4,8 +4,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import com.core.Logger;
-import com.models.member.Member;
-import com.models.member.MemberDao;
+import com.models.goods.Goods;
+import com.models.goods.GoodsDao;
 import com.models.snslogin.NaverLogin;
 import com.models.snslogin.SocialLogin;
 
@@ -76,7 +76,7 @@ public class CategoryController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/category/chicken.jsp");
 			rd.include(request, response);
 		} else { // 양식 처리(post)
-			//CategoryrDao dao = CategoryrDao.getInstance();
+			GoodsDao dao = GoodsDao.getInstance();
 			try {
 				
 
@@ -100,7 +100,6 @@ public class CategoryController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/category/sausage.jsp");
 			rd.include(request, response);
 		} else { // 양식 처리(post)
-			//CategoryrDao dao = CategoryrDao.getInstance();
 			try {
 				
 
@@ -124,7 +123,6 @@ public class CategoryController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/category/salad.jsp");
 			rd.include(request, response);
 		} else { // 양식 처리(post)
-			//CategoryrDao dao = CategoryrDao.getInstance();
 			try {
 				
 
@@ -148,7 +146,6 @@ public class CategoryController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/category/shake.jsp");
 			rd.include(request, response);
 		} else { // 양식 처리(post)
-			//CategoryrDao dao = CategoryrDao.getInstance();
 			try {
 				
 
